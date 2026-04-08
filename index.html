@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>NkiseeCocoa | Premium Cocoa · Global Excellence</title>
+<!-- Google Fonts & modern styling -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+<style>
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+body {
+font-family: 'Inter', sans-serif;
+background: #FEF9E6;
+color: #2C2B28;
+scroll-behavior: smooth;
+line-height: 1.5;
+}
+
+/* wide container adjustment */
+.container {
+max-width: 1280px;
+margin: 0 auto;
+padding: 0 32px;
+}
+
+/* Hero section without slideshow */
+.hero-section {
+background: linear-gradient(135deg, #2E2418 0%, #5E3A1C 100%);
+border-radius: 48px;
+margin: 32px 0 48px 0;
+overflow: hidden;
+position: relative;
+}
+
+.hero-wide {
+display: flex;
+flex-wrap: wrap;
+align-items: center;
+justify-content: space-between;
+gap: 48px;
+padding: 64px 56px;
+}
+
+.hero-content {
+flex: 1.2;
+z-index: 2;
+}
+
+.hero-content .badge {
+background: rgba(235, 217, 198, 0.2);
+backdrop-filter: blur(10px);
+display: inline-block;
+padding: 6px 14px;
+border-radius: 40px;
+font-size: 0.85rem;
+font-weight: 600;
+color: #EBD9C6;
+margin-bottom: 20px;
+border: 1px solid rgba(235, 217, 198, 0.3);
+}
+
+.hero-content h1 {
+font-size: 3.5rem;
+font-weight: 800;
+line-height: 1.2;
+letter-spacing: -1px;
+color: #FFFFFF;
+margin-bottom: 24px;
+}
+
+.hero-content p {
+font-size: 1.1rem;
+color: #EBD9C6;
+margin-bottom: 32px;
+max-width: 500px;
+line-height: 1.5;
+}
+
+.hero-buttons {
+display: flex;
+gap: 18px;
+flex-wrap: wrap;
+}
+
+/* Hero decorative element */
+.hero-decoration {
+position: absolute;
+right: 0;
+top: 0;
+bottom: 0;
+width: 40%;
+background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="rgba(255,255,255,0.03)"/></svg>') repeat;
+opacity: 0.3;
+pointer-events: none;
+}
+
+/* stats grid */
+.stats-grid {
+display: flex;
+flex-wrap: wrap;
+justify-content: space-between;
+gap: 30px;
+background: #F6EFE3;
+border-radius: 48px;
+padding: 48px 40px;
+margin: 64px 0;
+}
+
+.stat-item {
+text-align: center;
+flex: 1;
+min-width: 140px;
+}
+
+.stat-number {
+font-size: 2.5rem;
+font-weight: 800;
+color: #5E3A1C;
+}
+
+.stat-label {
+font-weight: 500;
+color: #4F3F2F;
+}
+
+/* section titles */
+.section-title {
+font-size: 2.2rem;
+font-weight: 700;
+margin-bottom: 16px;
+color: #2E241D;
+letter-spacing: -0.3px;
+}
+
+.section-sub {
+color: #7C5F42;
+max-width: 700px;
+margin-bottom: 48px;
+font-size: 1.1rem;
+}
+
+/* products grid */
+.products-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+gap: 32px;
+margin: 40px 0 60px;
+}
+
+.product-card {
+background: white;
+border-radius: 32px;
+overflow: hidden;
+box-shadow: 0 12px 26px rgba(0, 0, 0, 0.05);
+transition: all 0.3s;
+}
+
+.product-card:hover {
+transform: translateY(-8px);
+box-shadow: 0 24px 36px rgba(0, 0, 0, 0.1);
+}
+
+.product-img {
+height: 240px;
+background: #ECD9C4;
+overflow: hidden;
+}
+
+.product-img img {
+width: 100%;
+height: 100%;
+object-fit: cover;
+transition: 0.4s;
+}
+
+.product-card:hover .product-img img {
+transform: scale(1.05);
+}
+
+.product-info {
+padding: 24px;
+}
+
+.product-info h3 {
+font-size: 1.6rem;
+font-weight: 700;
+margin-bottom: 8px;
+}
+
+.product-info p {
+color: #5D4A34;
+margin-bottom: 20px;
+}
+
+.price {
+font-weight: 800;
+font-size: 1.4rem;
+color: #B45F2B;
+}
+
+/* story section */
+.story-section {
+display: flex;
+flex-wrap: wrap;
+gap: 48px;
+background: #FFFFFF;
+border-radius: 48px;
+padding: 48px;
+margin: 60px 0;
+align-items: center;
+box-shadow: 0 8px 20px rgba(0, 0, 0, 0.02);
+}
+
+.story-text {
+flex: 1.2;
+}
+
+.story-text h2 {
+font-size: 2rem;
+margin-bottom: 20px;
+}
+
+.story-text p {
+margin-bottom: 20px;
+color: #3F3326;
+}
+
+.story-img {
+flex: 1;
+border-radius: 28px;
+overflow: hidden;
+max-height: 380px;
+}
+
+.story-img img {
+width: 100%;
+height: 100%;
+object-fit: cover;
+}
+
+/* features section - NEW */
+.features-section {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+gap: 32px;
+margin: 60px 0;
+}
+
+.feature-card {
+background: white;
+border-radius: 32px;
+padding: 32px;
+text-align: center;
+transition: all 0.3s;
+box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+}
+
+.feature-card:hover {
+transform: translateY(-5px);
+box-shadow: 0 16px 32px rgba(0, 0, 0, 0.1);
+}
+
+.feature-icon {
+font-size: 3rem;
+margin-bottom: 20px;
+}
+
+.feature-card h3 {
+font-size: 1.4rem;
+margin-bottom: 12px;
+color: #2E241D;
+}
+
+.feature-card p {
+color: #6B5A48;
+line-height: 1.5;
+}
+
+/* testimonial section - NEW */
+.testimonial-section {
+background: linear-gradient(115deg, #F6EFE3 0%, #EDE3D4 100%);
+border-radius: 48px;
+padding: 56px 48px;
+margin: 64px 0;
+text-align: center;
+}
+
+.testimonial-section h2 {
+font-size: 2rem;
+margin-bottom: 40px;
+color: #2E241D;
+}
+
+.testimonial-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+gap: 32px;
+}
+
+.testimonial-card {
+background: white;
+border-radius: 28px;
+padding: 32px;
+text-align: left;
+box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+}
+
+.testimonial-text {
+font-style: italic;
+color: #4A3B2C;
+line-height: 1.6;
+margin-bottom: 20px;
+font-size: 1rem;
+}
+
+.testimonial-author {
+font-weight: 700;
+color: #5E3A1C;
+margin-bottom: 4px;
+}
+
+.testimonial-title {
+font-size: 0.85rem;
+color: #8B7355;
+}
+
+/* cta banner */
+.cta-banner {
+background: linear-gradient(115deg, #3C2A1C 0%, #634A2E 100%);
+border-radius: 48px;
+padding: 56px 48px;
+margin: 64px 0;
+text-align: center;
+color: white;
+}
+
+.cta-banner h2 {
+font-size: 2.2rem;
+font-weight: 700;
+margin-bottom: 16px;
+}
+
+.cta-banner p {
+font-size: 1.1rem;
+max-width: 700px;
+margin: 0 auto 28px;
+opacity: 0.9;
+}
+
+.btn-white {
+background: white;
+color: #5E3A1C;
+box-shadow: none;
+}
+
+.btn-white:hover {
+background: #F5E6D8;
+transform: translateY(-2px);
+}
+
+/* buttons global */
+.btn-primary {
+display: inline-flex;
+align-items: center;
+gap: 10px;
+background: #5E3A1C;
+color: white;
+font-weight: 600;
+padding: 12px 28px;
+border-radius: 40px;
+text-decoration: none;
+transition: all 0.3s ease;
+border: none;
+cursor: pointer;
+font-size: 1rem;
+letter-spacing: -0.2px;
+box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.btn-primary:hover {
+background: #3F2A14;
+transform: translateY(-2px);
+box-shadow: 0 12px 22px rgba(0, 0, 0, 0.1);
+}
+
+.btn-outline {
+background: transparent;
+border: 2px solid #FFFFFF;
+color: #FFFFFF;
+font-weight: 600;
+padding: 10px 26px;
+border-radius: 40px;
+text-decoration: none;
+transition: 0.25s;
+display: inline-block;
+}
+
+.btn-outline:hover {
+background: rgba(255, 255, 255, 0.1);
+color: white;
+transform: translateY(-2px);
+}
+
+/* navigation */
+.navbar {
+padding: 24px 0;
+display: flex;
+align-items: center;
+justify-content: space-between;
+flex-wrap: wrap;
+gap: 20px;
+}
+
+.logo {
+font-size: 1.8rem;
+font-weight: 800;
+letter-spacing: -0.5px;
+background: linear-gradient(135deg, #5E3A1C, #A5673F);
+background-clip: text;
+-webkit-background-clip: text;
+color: transparent;
+}
+
+.logo span {
+color: #C47D46;
+background: none;
+-webkit-background-clip: unset;
+background-clip: unset;
+}
+
+.nav-links {
+display: flex;
+gap: 36px;
+align-items: center;
+}
+
+.nav-links a {
+text-decoration: none;
+font-weight: 500;
+color: #3E2A1B;
+transition: 0.2s;
+font-size: 1rem;
+}
+
+.nav-links a:hover {
+color: #B45F2B;
+}
+
+/* footer */
+.footer {
+background: #241E18;
+color: #D6C6B2;
+padding: 56px 0 32px;
+margin-top: 60px;
+border-radius: 32px 32px 0 0;
+}
+
+.footer-grid {
+display: flex;
+flex-wrap: wrap;
+justify-content: space-between;
+gap: 40px;
+margin-bottom: 48px;
+}
+
+.footer-col h4 {
+color: #F1E2CF;
+margin-bottom: 20px;
+font-size: 1.2rem;
+}
+
+.footer-col p,
+.footer-col a {
+color: #C6B294;
+text-decoration: none;
+line-height: 1.8;
+display: block;
+}
+
+.footer-col a:hover {
+color: #E6C394;
+}
+
+.copyright {
+text-align: center;
+border-top: 1px solid #3D3328;
+padding-top: 28px;
+font-size: 0.85rem;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+.container {
+padding: 0 24px;
+}
+
+.hero-wide {
+padding: 48px 32px;
+}
+
+.hero-content h1 {
+font-size: 2.6rem;
+}
+
+.navbar {
+flex-direction: column;
+align-items: flex-start;
+}
+
+.nav-links {
+flex-wrap: wrap;
+gap: 20px;
+}
+
+.section-title {
+font-size: 1.9rem;
+}
+
+.stats-grid {
+flex-direction: column;
+gap: 30px;
+}
+
+.story-section,
+.cta-banner,
+.testimonial-section {
+padding: 32px;
+}
+
+.features-section {
+gap: 20px;
+}
+}
+
+@media (max-width: 600px) {
+.hero-buttons {
+flex-direction: column;
+align-items: flex-start;
+}
+
+.hero-content h1 {
+font-size: 2.1rem;
+}
+
+.hero-wide {
+padding: 40px 24px;
+}
+
+.feature-card {
+padding: 24px;
+}
+}
+</style>
+</head>
+<body>
+<div class="container">
+<!-- Navigation -->
+<nav class="navbar">
+<div class="logo">Nkisee<span>Cocoa</span></div>
+<div class="nav-links">
+<a href="#">Home</a>
+<a href="#products">Premium Cocoa</a>
+<a href="#story">The Farm</a>
+<a href="#features">Why Us</a>
+<a href="#contact">Global Export</a>
+<a href="#" class="btn-outline" style="padding: 8px 22px; border-color: #5E3A1C; color: #5E3A1C;">Request Sample</a>
+</div>
+</nav>
+</div>
+
+<!-- HERO SECTION (slideshow removed) -->
+<div class="container">
+<div class="hero-section">
+<div class="hero-wide">
+<div class="hero-content">
+<div class="badge">✨ World's Finest Premium Cocoa</div>
+<h1>Global Excellence: <br> From Our Farm to the World</h1>
+<p>NkiseeCocoa delivers exceptional, sustainably grown premium cocoa beans to chocolatiers, traders, and buyers worldwide. Traceable, ethical, and unmatched in flavor.</p>
+<div class="hero-buttons">
+<a href="#contact" class="btn-primary">🌍 Become a Global Partner →</a>
+<a href="#products" class="btn-outline">Discover Premium Selection</a>
+</div>
+</div>
+<div class="hero-decoration"></div>
+</div>
+</div>
+</div>
+
+<div class="container">
+<!-- Global Trust indicators -->
+<div class="stats-grid">
+<div class="stat-item">
+<div class="stat-number">Large</div>
+<div class="stat-label">Hectares of Premium Plantation</div>
+</div>
+<div class="stat-item">
+<div class="stat-number">Several</div>
+<div class="stat-label">Years of Excellence</div>
+</div>
+<div class="stat-item">
+<div class="stat-number">Available for</div>
+<div class="stat-label">Countries Worldwide</div>
+</div>
+<div class="stat-item">
+<div class="stat-number">100%</div>
+<div class="stat-label">Direct Farm Ownership & Traceability</div>
+</div>
+</div>
+
+<!-- Products Section — PREMIUM COCOA -->
+<div id="products">
+<h2 class="section-title">Our premium cocoa collection</h2>
+<div class="section-sub">Natural, high-quality cocoa from our farm to your door</div>
+</div>
+
+<div class="products-grid">
+<div class="product-card">
+<div class="product-img">
+<img src="images/IMG-20260403-WA0044.jpg" alt="Premium fermented cocoa beans">
+</div>
+<div class="product-info">
+<h3>Premium Cocoa</h3>
+<p>Natural. Full lot traceability.</p>
+<div class="price">Global Inquiry / MT</div>
+</div>
+</div>
+<div class="product-card">
+<div class="product-img">
+<img src="images/IMG-20260403-WA0049.jpg" alt="Premium organic cocoa powder">
+</div>
+<div class="product-info">
+<h3>Premium Cocoa, Ready for Port Deliveries</h3>
+<p>Rich, dark and Perfect confectionery worldwide.</p>
+<div class="price">Export bulk</div>
+</div>
+</div>
+<div class="product-card">
+<div class="product-img">
+<img src="images/IMG-20260403-WA0053.jpg" alt="Crushed cocoa nibs">
+</div>
+<div class="product-info">
+<h3>Raw Premium Cocoa Nibs</h3>
+<p>Direct farm to port, organic certified.</p>
+<div class="price">Wholesale global</div>
+</div>
+</div>
+</div>
+
+<!-- NEW: Features Section - Why Choose Us -->
+<div id="features">
+<h2 class="section-title">Why choose NkiseeCocoa?</h2>
+<div class="section-sub">Setting the standard for premium cocoa export</div>
+</div>
+
+<div class="features-section">
+<div class="feature-card">
+<div class="feature-icon">🌱</div>
+<h3>Farm-to-Factory Traceability</h3>
+<p>Complete transparency from seedling to shipment. Every bean can be traced back to our family-owned farms.</p>
+</div>
+<div class="feature-card">
+<div class="feature-icon">🏆</div>
+<h3>Premium Quality Standards</h3>
+<p>Rigorously sorted, perfectly fermented, and sun-dried to achieve the finest flavor profile.</p>
+</div>
+<div class="feature-card">
+<div class="feature-icon">🚢</div>
+<h3>Global Logistics Network</h3>
+<p>Seamless shipping to any port worldwide with full container loads and customizable packaging.</p>
+</div>
+<div class="feature-card">
+<div class="feature-icon">🤝</div>
+<h3>Direct Trade Partnership</h3>
+<p>No middlemen. Fair pricing, ethical practices, and long-term relationships with global buyers.</p>
+</div>
+</div>
+
+<!-- Story: premium heritage + worldwide vision -->
+<div id="story" class="story-section">
+<div class="story-text">
+<h2>🌿 NkiseeCocoa: Premium Roots, Global Reach</h2>
+<p>We don't just trade cocoa — we cultivate premium excellence. Our owned farms spans lush tropical highlands, producing some of the most sought-after Cocoa. With full control from seedling to shipment, we guarantee consistency, ethical practices, and superior goods that meets international standards.</p>
+<p>Our harvest is sun-dried, carefully fermented, and sorted by master graders. By owning our production, we eliminate intermediaries, ensuring the purest premium cocoa for buyers across Europe, Asia, North America, and beyond.</p>
+<a href="#contact" class="btn-primary" style="margin-top: 12px;">📦 Request premium samples</a>
+</div>
+<div class="story-img">
+<img src="images/IMG-20260403-WA0049.jpg" alt="Nkisee farm owner holding premium cocoa">
+</div>
+</div>
+
+<!-- NEW: Testimonial Section -->
+<div class="testimonial-section">
+<h2>Trusted by buyers worldwide</h2>
+<div class="testimonial-grid">
+<div class="testimonial-card">
+<div class="testimonial-text">"NkiseeCocoa delivers exceptional quality beans with consistent flavor. Their traceability and professionalism make them our go-to supplier for premium cocoa."</div>
+<div class="testimonial-author">— Marco V.</div>
+<div class="testimonial-title">European Chocolate Manufacturer</div>
+</div>
+<div class="testimonial-card">
+<div class="testimonial-text">"Working directly with NkiseeCocoa has transformed our supply chain. Fair prices, reliable shipping, and beans that exceed expectations every time."</div>
+<div class="testimonial-author">— Sarah K.</div>
+<div class="testimonial-title">North American Cocoa Trader</div>
+</div>
+<div class="testimonial-card">
+<div class="testimonial-text">"The quality of their cocoa nibs is unmatched. Direct farm ownership means we get consistency and transparency that's rare in this industry."</div>
+<div class="testimonial-author">— David C.</div>
+<div class="testimonial-title">Asian Confectionery Group</div>
+</div>
+</div>
+</div>
+
+<!-- GLOBAL CTA BANNER — Worldwide target -->
+<div class="cta-banner">
+<h2>Supplying Premium Cocoa to the World</h2>
+<p>We sell directly to buyers across Europe, North America, Asia, and the Middle East. Fast logistics, full container loads, customizable packaging, and complete traceability from our farm to your factory.</p>
+<a href="#contact" class="btn-primary btn-white">🌍 Become an Official Global Buyer →</a>
+</div>
+
+<!-- contact / enquiry section — worldwide focus -->
+<div id="contact" style="margin: 40px 0 60px;">
+<div style="background: #FFFFFF; border-radius: 40px; padding: 48px; box-shadow: 0 12px 28px rgba(0,0,0,0.03);">
+<h2 class="section-title" style="margin-bottom: 8px;">Place Orders with NkiseeCocoa</h2>
+<div class="section-sub">Join Demanding traders. Request a quote or sample today.</div>
+<form action="#" method="post" style="display: flex; flex-direction: column; gap: 24px; max-width: 700px;">
+<div style="display: flex; flex-wrap: wrap; gap: 20px;">
+<input type="text" placeholder="Full name / Company" style="flex:1; padding: 14px 18px; border-radius: 60px; border: 1px solid #E2D4C4; background: #FEFAF5; font-family: inherit;">
+<input type="email" placeholder="Business Email" style="flex:1; padding: 14px 18px; border-radius: 60px; border: 1px solid #E2D4C4; background: #FEFAF5;">
+</div>
+<select style="padding: 14px 18px; border-radius: 60px; border: 1px solid #E2D4C4; background: #FEFAF5;">
+<option>Select your region (worldwide)</option>
+<option>Europe</option>
+<option>North America</option>
+<option>Asia Pacific</option>
+<option>Middle East</option>
+<option>Africa</option>
+<option>South America</option>
+<option>Other / Global</option>
+</select>
+<textarea rows="3" placeholder="Tell us your volume requirements (tons / month) and premium product interest..." style="border-radius: 28px; padding: 16px; border: 1px solid #E2D4C4; background: #FEFAF5; font-family: inherit;"></textarea>
+<div><button type="submit" class="btn-primary" style="border: none;">Send Global Inquiry →</button></div>
+</form>
+<p style="margin-top: 28px; font-size: 0.9rem; color: #886E50;">✉️ Export & premium sales: nkisee26@gmail.com | 📞 08153097559 . . 08069718008</p>
+</div>
+</div>
+</div>
+
+<!-- footer -->
+<footer class="footer">
+<div class="container">
+<div class="footer-grid">
+<div class="footer-col">
+<h4>NkiseeCocoa Premium</h4>
+<p>Direct farm ownership, premium cocoa exporter to the world. From our family harvest to global markets.</p>
+</div>
+<div class="footer-col">
+<h4>Quick Links</h4>
+<a href="#">Home</a>
+<a href="#products">Premium Cocoa</a>
+<a href="#story">Our Story</a>
+<a href="#features">Why Us</a>
+<a href="#contact">Global Export</a>
+</div>
+<div class="footer-col">
+<h4>Worldwide Markets</h4>
+<p>Europe | North America | Asia | Middle East | Africa | Global Trade</p>
+<h4 style="margin-top: 18px;">Certifications</h4>
+<p>Rainforest Alliance · Organic · Traceability · Direct Trade</p>
+</div>
+<div class="footer-col">
+<h4>Connect</h4>
+<p>📧 nkisee26@gmail.com</p>
+<p>📞 08153097559 . . 08069718008</p>
+<p>📍 Nigeria — Shipping Worldwide</p>
+</div>
+</div>
+<div class="copyright">
+© 2025 NkiseeFoods — Finest Cocoa, Shipped Globally. All imagery represents actual farm produce.
+</div>
+</div>
+</footer>
+
+<script>
+// smooth scroll for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+anchor.addEventListener('click', function(e) {
+const targetId = this.getAttribute('href');
+if (targetId === "#" || targetId === "") return;
+const targetElement = document.querySelector(targetId);
+if (targetElement) {
+e.preventDefault();
+targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+});
+});
+
+// contact form demo alert
+const form = document.querySelector('form');
+if (form) {
+form.addEventListener('submit', function(e) {
+e.preventDefault();
+alert("✨ Thank you for your interest in NkiseeCocoa Premium! Our global export team will contact you within 24 hours with premium cocoa samples and pricing.");
+form.reset();
+});
+}
+
+// Add animation on scroll for feature cards (subtle)
+const observerOptions = {
+threshold: 0.1,
+rootMargin: '0px 0px -50px 0px'
+};
+
+const observer = new IntersectionObserver((entries) => {
+entries.forEach(entry => {
+if (entry.isIntersecting) {
+entry.target.style.opacity = '1';
+entry.target.style.transform = 'translateY(0)';
+}
+});
+}, observerOptions);
+
+document.querySelectorAll('.feature-card, .product-card, .testimonial-card').forEach(el => {
+el.style.opacity = '0';
+el.style.transform = 'translateY(20px)';
+el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+observer.observe(el);
+});
+</script>
+</body>
+</html>
